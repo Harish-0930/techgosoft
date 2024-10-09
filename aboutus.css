@@ -1,0 +1,528 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    height:80px;
+    margin: auto;
+}
+
+.brand img {
+    width: 250px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        z-index:999;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        border-radius: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}   
+
+
+/* Container for the section */
+.impact-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    position: relative; /* Needed for button positioning */
+}
+.impact-extra{
+    flex-direction: row-reverse;
+}
+
+/* Image container styling */
+.image-container-general {
+    width: 45%;
+}
+
+.image-container-general img {
+    width: 100%;
+    height: auto;
+}
+
+/* Text container styling */
+.text-container {
+    width: 50%;/* Blue color for the text */
+    padding-left: 20px; /* Add spacing between image and text */
+}
+
+/* Heading styling */
+.impact-heading {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: transparent;
+    background-image: linear-gradient(238deg, #A85D73 42%, #0073CF 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Caption styling */
+.impact-caption {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+.learn-more-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 55px; /* Position button to the left */
+    background-color: #0073CF;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for button */
+.learn-more-btn:hover {
+    background-color: #005fa3; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .impact-section {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-container-general, .text-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .text-container {
+        padding-top: 20px;
+    }
+    .learn-more-btn {
+        margin-top: 20px;
+    }
+}
+
+
+
+/* Flex container for section */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Text content styling */
+.text-content {
+    width: 45%;
+    padding-right: 20px; /* Spacing between text and cards */
+}
+
+.section-heading {
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-weight: bold;
+    color: transparent;
+    background-image: linear-gradient(238deg, #A85D73 42%, #0073CF 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sub-heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.section-caption {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Card container styling */
+.card-container {
+    color:#fff; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+    width: 50%;
+}
+
+/* Card styling */
+.card {
+    background: #005fa3;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 20px); /* Adjust width to fit in 3 columns, with gap */
+    margin-bottom: 20px; /* Space below each card */
+    min-height: 200px; /* Minimum height for cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    box-sizing: border-box; /* Ensure padding and border are included in height/width */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card i {
+    font-size: 3rem;
+    color: #fff; /* Blue color for icons */
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    line-height: 2;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    color: #fff; /* Darker text color */
+}
+
+/* Hover effect for cards */
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Responsive Design For Cards In About Page */
+@media screen and (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-content {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .card-container {
+        width: 100%;
+    }
+}
+/* mission section */
+.mission-section{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.mission-container{
+    width: 100%;
+    position: relative;
+    padding-left:150px;
+}
+.mission-container .m-image{
+    max-width: 100%;
+    height: 680px;
+    margin-bottom: 0;
+}
+.mission-container .m-image img{
+    height:100%;
+}
+.m-text-content{
+    position: absolute;
+    right: 10%;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 1px;
+    width:60%;
+    color: #fff;
+    background-color: #177ec8;
+    height:500px;
+    word-spacing: 2px;
+    line-height: 25px;
+    text-align: center;
+}
+.m-text-content h3{
+    padding-top: 150px;
+}
+.m-text-content p{
+    padding: 50px;
+    padding-bottom:100px;
+}
+
+@media screen and (max-width: 768px) {
+    .mission-container{
+        width: 100%;
+        padding: 0;
+    }
+    .mission-container .m-image{
+        height:auto;
+    }
+    .mission-container .m-image img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .m-text-content {
+        position: relative;
+        right: 0;
+        top:0;
+        width: 100%; /* Full width */
+        height: auto; /* Allow height to fit content */
+    }
+    .m-text-content p{
+        padding: 40px;
+    }
+    .m-text-content h3{
+        padding-top: 50px;
+    }
+}
+
+
+/* .vision-section */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+.vision-section{
+    width: 100%;
+}
+
+.vision-container{
+    width: 100%;
+    position: relative;
+    text-align: right;
+    padding-right:150px;
+}
+.vision-container .v-image{
+    max-width: 100%;
+    height: 680px;
+}
+.vision-container .v-image img{
+    height:100%;
+} 
+.v-text-content{
+    position: absolute;
+    top: 100px;
+    left:10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 1px;
+    width:60%;
+    color: #fff;
+    background-color: #177ec8;
+    height:500px;
+    word-spacing: 2px;
+    line-height: 25px;
+    text-align:center
+}
+.v-text-content h3{
+    padding-top: 150px;
+}
+.v-text-content p{
+    padding: 50px;
+    padding-bottom:100px;
+}
+
+@media screen and (max-width: 768px) {
+    .vision-container{
+        width: 100%;
+        padding: 0;
+    }
+    .vision-container .v-image{
+        height:auto;
+    }
+    .vision-container .v-image img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .v-text-content {
+        padding:0;
+        position: relative;
+        left: 0;
+        top:0;
+        width: 100%; /* Full width */
+        height: auto; /* Allow height to fit content */
+    }
+    .v-text-content p{
+    padding: 40px;
+    }
+    .v-text-content h3{
+    padding-top: 50px;
+    }
+}
+
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #777;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-section p, .footer-section ul {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #777;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    text-align: center;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    color: #777;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #777;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+@media (max-width: 430px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
